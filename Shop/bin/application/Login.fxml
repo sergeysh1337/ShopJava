@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainController">
    <children>
-      <Button layoutX="124.0" layoutY="218.0" mnemonicParsing="false" onAction="#checkLogin" text="Login" />
+      <Button fx:id="Login" layoutX="124.0" layoutY="218.0" mnemonicParsing="false" onAction="#checkLogin" text="Login" />
       <TextField fx:id="txtUserName" layoutX="30.0" layoutY="67.0" promptText="userName">
          <font>
             <Font size="18.0" />
