@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="application.mainController">
+   <children>
+      <TreeTableView layoutX="-1.0" layoutY="27.0" prefHeight="200.0" prefWidth="700.0">
+        <columns>
+          <TreeTableColumn prefWidth="75.0" text="C1" />
+          <TreeTableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TreeTableView>
+      <ComboBox id="genre" layoutX="87.0" layoutY="299.0" prefWidth="150.0" promptText="Choose Genre" />
+      <ComboBox layoutX="511.0" layoutY="299.0" prefWidth="150.0" promptText="Choose Author" />
+      <Label layoutX="37.0" layoutY="303.0" prefHeight="17.0" prefWidth="34.0" text="Genre" />
+      <Label layoutX="461.0" layoutY="303.0" prefHeight="17.0" prefWidth="41.0" text="Author" />
+      <Button fx:id="login" layoutY="2.0" mnemonicParsing="false" onAction="#goToLogin" text="Login" />
+      <Button layoutX="61.0" layoutY="2.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="121.0" layoutY="2.0" mnemonicParsing="false" text="Button" />
+   </children>
+</AnchorPane>
