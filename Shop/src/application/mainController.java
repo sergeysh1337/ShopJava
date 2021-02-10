@@ -36,6 +36,7 @@ private TextField txtUserName;
 @FXML
 private TextField txtPassword;
 
+
 @FXML
 private VBox chosenBookCard  = new VBox();
 
@@ -57,7 +58,24 @@ private GridPane grid = new GridPane();
 private List<Product> books = new ArrayList<>();
 private Image image;
 private MyListener myListener;
-
+public void checkLogin(ActionEvent event) throws Exception
+{
+	
+if(txtUserName.getText().equals("user") && txtPassword.getText().equals("password"))
+	{
+			lblStatus.setText("Login Success");
+			Stage primaryStage=new Stage();
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+			primaryStage.setScene(new Scene(root));
+					
+					primaryStage.show();
+					((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+	}
+			else
+				lblStatus.setText("Login Failed");
+	
+}
 public void goToLogin(ActionEvent event) throws Exception
 {
 	Stage primaryStage=new Stage();
@@ -68,23 +86,17 @@ public void goToLogin(ActionEvent event) throws Exception
 	primaryStage.show();
 	 ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
 }
-public void checkLogin(ActionEvent event) throws Exception
-{
-	if(txtUserName.getText().equals("user") && txtPassword.getText().equals("pass"))
-	{
-		lblStatus.setText("Login Success");
-		Stage primaryStage=new Stage();
-		Parent root=FXMLLoader.load(getClass().getResource("Main.fxml"));
-		primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-		primaryStage.show();
-		((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+
+
+
 		
-	}
-	else
-		lblStatus.setText("Login Failed");
+	
 		
-}
+
+	
+		
+
+
 public void signUp(ActionEvent event) throws Exception
 {
 	
@@ -101,12 +113,12 @@ private List<Product> getData() {
     List<Product> books = new ArrayList<>();
     Product book;
 
-    book = new Product();
+   /* book = new Product();
     book.setName("Bridgerton");
     book.setPrice(2.99);
     book.setImgSrc("/assets/images/elon-musk-15.jpg");
     book.setColor("6A7324");
-    books.add(book);
+    books.add(book);*/
 //
 //    book = new Product();
 //    book.setName("Coconut");

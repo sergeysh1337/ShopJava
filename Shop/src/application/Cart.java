@@ -8,6 +8,11 @@ public class Cart {
 	private int countOfProducts;
 	private Customer cartOwner;
 	
+	public Cart(int numberOfCart) {
+		this.numberOfCart = numberOfCart;
+		
+	}
+
 	public void addProduct(Product newProduct)
 	{
 		if(countOfProducts<100)

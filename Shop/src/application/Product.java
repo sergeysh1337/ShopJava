@@ -7,6 +7,12 @@ public class Product {
 	private int numOfCatalog;
     private String imgSrc;
     private String color;
+    public Product(String name, double price, double sale, int numOfCatalog) {
+		this.name = name;
+		this.price = price;
+		this.sale = sale;
+		this.numOfCatalog = numOfCatalog;
+	}
 
     public String getName() {
         return name;
@@ -20,7 +26,9 @@ public class Product {
         return imgSrc;
     }
 
-    public void setImgSrc(String imgSrc) {
+    
+
+	public void setImgSrc(String imgSrc) {
         this.imgSrc = imgSrc;
     }
 
