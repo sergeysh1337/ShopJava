@@ -9,6 +9,22 @@ public class Shop {
 	private Cart[] allCarts;  
 	private int currentCarts;
 
+	public Shop() {
+		this.shopName = shopName;
+		this.allProducts = new Product[100];
+		this.allCustomers =new Customer[100];
+		this.allCarts = new Cart[100];
+		
+		
+	}
+	public Product[] getAllProducts()
+	{
+		return allProducts;
+	}
+	public Customer[] getAllCustomers()
+	{
+		return allCustomers;
+	}
 	public void addCustomer(Customer newCustomer)
 	{
 		if(currentCustomers<100)
@@ -29,6 +45,7 @@ public class Shop {
 		allCustomers=anotherArray;
 		currentCustomers--;
 	}
+	
 	public void addCart(Cart newCart)
 	{
 		if(currentCarts<100)

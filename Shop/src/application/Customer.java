@@ -4,10 +4,24 @@ public class Customer {
 	private String userName;
 	private String password;
 	private String address;
-	private int phoneNumber;
+	private String phoneNumber;
 	private Cart personalCart;
 	private boolean online;
 	
+	public Customer(String userName, String password, String address, String string) {
+		this.userName = userName;
+		this.password = password;
+		this.address = address;
+		this.phoneNumber = string;
+	}
+	public String getUserName()
+	{
+		return userName;
+	}
+	public String getPassword()
+	{
+		return password;
+	}
 	public void login()
 	{
 		online=true;
@@ -24,7 +38,7 @@ public class Customer {
 	{
 		this.address=address;
 	}
-	public void setPhone(int phoneNumber)
+	public void setPhone(String phoneNumber)
 	{
 		this.phoneNumber=phoneNumber;
 	}
