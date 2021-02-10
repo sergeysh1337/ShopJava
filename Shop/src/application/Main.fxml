@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -27,7 +26,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="110.0" prefWidth="200.0">
                      <children>
-                        <Label prefHeight="49.0" prefWidth="128.0" text="Books" textFill="#878787">
+                        <Label prefHeight="49.0" prefWidth="128.0" text="Book" textFill="#878787">
                            <font>
                               <Font name="Cambria Bold" size="40.0" />
                            </font>
@@ -92,7 +91,7 @@
                         </ImageView>
                         <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0" stylesheets="@application.css">
                            <children>
-                              <Label prefHeight="53.0" prefWidth="167.0" text="Kg" textFill="WHITE">
+                              <Label prefHeight="53.0" prefWidth="167.0" text="Qty" textFill="WHITE">
                                  <font>
                                     <Font name="Cambria" size="24.0" />
                                  </font>
@@ -103,30 +102,7 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" stylesheets="@application.css">
-                           <VBox.margin>
-                              <Insets bottom="20.0" top="20.0" />
-                           </VBox.margin>
-                           <children>
-                              <Separator prefHeight="0.0" prefWidth="118.0" />
-                              <Label alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="or" textFill="WHITE">
-                                 <font>
-                                    <Font name="Cambria" size="24.0" />
-                                 </font>
-                              </Label>
-                              <Separator prefHeight="0.0" prefWidth="118.0" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0" stylesheets="@application.css">
-                           <children>
-                              <Label prefHeight="53.0" prefWidth="167.0" text="Kg" textFill="WHITE">
-                                 <font>
-                                    <Font name="Cambria" size="24.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox prefHeight="45.0" prefWidth="130.0" promptText="selected" styleClass="comboBox" stylesheets="@application.css" />
-                           </children>
-                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0" stylesheets="@application.css" />
                         <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" stylesheets="@application.css" text="ADD TO CART" textFill="#828282">
                            <VBox.margin>
                               <Insets bottom="20.0" top="30.0" />

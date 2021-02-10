@@ -2,13 +2,24 @@ package application;
 
 public class Shop {
 	private String shopName;
-	private Product[] allProducts;
+	private Book[] allProducts;
 	private int currentProducts;
 	private Customer[] allCustomers;
 	private int currentCustomers;
 	private Cart[] allCarts;  
 	private int currentCarts;
 
+	public Shop(Customer[] allCustomers) {
+		//this.shopName = shopName;
+		//this.allProducts = allProducts;
+		this.allCustomers = allCustomers;
+		//this.allCarts = allCarts;
+		//currentProducts=allProducts.length-1;
+		currentCustomers=allCustomers.length;
+		//currentCarts=allCarts.length-1;
+		
+	}
+	
 	public void addCustomer(Customer newCustomer)
 	{
 		if(currentCustomers<100)
@@ -16,6 +27,13 @@ public class Shop {
 			allCustomers[currentCustomers++]=newCustomer;
 		}
 	}
+	
+
+	public Customer[] getCustomers()
+	{
+		return this.allCustomers;
+	}
+	
 	public void deleteCustomer(Customer deleteCustomer)
 	{
 		Customer[] anotherArray = new Customer[currentCustomers - 1]; 
@@ -59,7 +77,7 @@ public class Shop {
 		}
 		return onlineCustomers;
 	}
-	public int numOfCartsUsing()
+	public int numOfCartsInUse()
 	{
 		int cartsUsing=0;
 		for(int i=0;i<currentCarts;i++)

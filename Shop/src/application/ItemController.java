@@ -22,10 +22,10 @@ public class ItemController {
         myListener.onClickListener(book);
     }
 
-    private Product book;
+    private Book book;
     private MyListener myListener;
 
-    public void setData(Product book, MyListener myListener) {
+    public void setData(Book book, MyListener myListener) {
         this.book = book;
         this.myListener = myListener;
         nameLabel.setText(book.getName());

@@ -1,5 +1,5 @@
 package application;
 
 public interface MyListener {
-	 public void onClickListener(Product book);
+	 public void onClickListener(Book book);
 }

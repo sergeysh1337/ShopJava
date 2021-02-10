@@ -3,44 +3,61 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane onMousePressed="#click" stylesheets="@application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ItemController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="8.0" prefHeight="215.0" prefWidth="225.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutY="-31.0" prefHeight="146.0" prefWidth="231.0" styleClass="fruit-item" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox prefHeight="51.0" prefWidth="185.0" stylesheets="@application.css">
+            <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="156.0" prefWidth="243.0" stylesheets="@application.css">
                <children>
-                  <Label fx:id="nameLabel" prefHeight="49.0" prefWidth="137.0" text="Elon Musk">
-                     <font>
-                        <Font name="Cambria" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="priceLable" prefHeight="49.0" prefWidth="101.0" text="\$0.99">
-                     <font>
-                        <Font name="Cambria Bold" size="18.0" />
-                     </font>
-                  </Label>
+                  <ImageView fx:id="img" fitHeight="121.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/elon-musk-15.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="130.0" style="-fx-alignment: center;">
+                     <children>
+                        <Label fx:id="nameLabel" prefHeight="49.0" prefWidth="125.0" style="-fx-alignment: center;" text="Elon Musk">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLable" prefHeight="49.0" prefWidth="120.0" style="-fx-alignment: center;" text="\$0.99">
+                           <font>
+                              <Font name="Cambria Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
-               <VBox.margin>
-                  <Insets left="20.0" top="20.0" />
-               </VBox.margin>
             </HBox>
-            <ImageView fx:id="img" fitHeight="115.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/elon-musk-15.jpg" />
-               </image>
-            </ImageView>
          </children>
-      </VBox>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </HBox>
    </children>
    <styleClass>
       <String fx:value="book-item" />
       <String fx:value="shadow" />
    </styleClass>
+   <effect>
+      <DropShadow>
+         <color>
+            <Color red="0.6710526347160339" green="0.11184210330247879" blue="0.11184210330247879" />
+         </color>
+      </DropShadow>
+   </effect>
 </AnchorPane>
