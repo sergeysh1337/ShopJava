@@ -8,17 +8,44 @@ public class Shop {
 	private int currentCustomers;
 	private Cart[] allCarts;  
 	private int currentCarts;
+	private int productCount;
 
-	public Shop(Customer[] allCustomers) {
-		//this.shopName = shopName;
-		//this.allProducts = allProducts;
-		this.allCustomers = allCustomers;
-		//this.allCarts = allCarts;
-		//currentProducts=allProducts.length-1;
-		currentCustomers=allCustomers.length;
-		//currentCarts=allCarts.length-1;
-		
+	public void show()
+	{
+		for(int i=0; i<currentCustomers; i++)
+		System.out.println(allCustomers[i].getAddress()+" "+allCustomers[i].getUserName()+" "
+		+allCustomers[i].getPassword()+" "+allCustomers[i].getPhone());
+		System.out.println("\n");
 	}
+
+	
+	public int getProductCount() {
+		return productCount;
+	}
+
+
+	public int getCurrentCustomers() {
+		return currentCustomers;
+	}
+
+
+	public void setCurrentCustomers(int currentCustomers) {
+		this.currentCustomers = currentCustomers;
+	}
+
+
+	public void setProductCount(int productCount) {
+		this.productCount = productCount;
+	}
+
+
+	public Shop(String shopName) {
+		this.shopName = shopName;
+		this.allProducts = new Book[100];
+		this.allCustomers =new Customer[100];
+		this.allCarts = new Cart[100];	
+	}
+
 	
 	public void addCustomer(Customer newCustomer)
 	{
@@ -28,10 +55,23 @@ public class Shop {
 		}
 	}
 	
+	public void addBook(Book newBook)
+	{
+		if(productCount<100)
+		{
+			allProducts[productCount++]=newBook;
+		}
+	}
+	
 
 	public Customer[] getCustomers()
 	{
 		return this.allCustomers;
+	}
+	
+	public Book[] getAllBooks()
+	{
+		return this.allProducts;
 	}
 	
 	public void deleteCustomer(Customer deleteCustomer)

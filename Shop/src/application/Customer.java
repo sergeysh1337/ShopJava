@@ -8,6 +8,12 @@ public class Customer {
 	private Cart personalCart;
 	private boolean online;
 	
+	public Customer(String userName, String password, String address, String phoneNumber) {
+		this.userName = userName;
+		this.password = password;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+	}
 	public void login()
 	{
 		online=true;
@@ -16,6 +22,11 @@ public class Customer {
 	{
 		online=false;
 	}
+	public String getPhone()
+	{
+		return phoneNumber;
+	}
+
 	public Cart getPersonalCart() {
 		return personalCart;
 	}

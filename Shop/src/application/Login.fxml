@@ -29,7 +29,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Hyperlink fx:id="signUp" layoutX="30.0" layoutY="295.0" onAction="#signUp" prefHeight="33.0" prefWidth="224.0" style="-fx-alignment: center;" text="Sign up" textFill="#da0d0d">
+      <Hyperlink fx:id="signUp" layoutX="30.0" layoutY="295.0" onAction="#signUp" prefHeight="33.0" prefWidth="224.0" style="-fx-alignment: center;" text="Create a new account" textFill="#5a0dd9">
          <font>
             <Font size="20.0" />
          </font>

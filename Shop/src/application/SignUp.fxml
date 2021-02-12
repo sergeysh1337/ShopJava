@@ -9,10 +9,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainController">
    <children>
-      <TextField id="newUser" layoutX="117.0" layoutY="79.0" promptText="Username" />
-      <TextField id="newPwd" layoutX="117.0" layoutY="135.0" promptText="Password" />
-      <TextField id="newPhone" layoutX="117.0" layoutY="195.0" promptText="Phone number" />
-      <TextField id="newAdr" layoutX="117.0" layoutY="252.0" promptText="Address" />
+      <TextField id="newUser" fx:id="userName" layoutX="117.0" layoutY="79.0" promptText="Username" />
+      <TextField id="newPwd" fx:id="pwd" layoutX="117.0" layoutY="135.0" promptText="Password" />
+      <TextField id="newPhone" fx:id="phone" layoutX="117.0" layoutY="195.0" promptText="Phone number" />
+      <TextField id="newAdr" fx:id="address" layoutX="117.0" layoutY="252.0" promptText="Address" />
       <Label layoutX="108.0" layoutY="14.0" prefHeight="27.0" prefWidth="185.0" text="Create an account">
          <font>
             <Font name="Monotype Corsiva" size="27.0" />
@@ -23,7 +23,7 @@
             <Font name="Monotype Corsiva" size="18.0" />
          </font>
       </CheckBox>
-      <Button fx:id="create" layoutX="117.0" layoutY="350.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="40.0" prefWidth="149.0" text="Create">
+      <Button fx:id="create" layoutX="117.0" layoutY="350.0" mnemonicParsing="false" onAction="#createNewCustomer" prefHeight="40.0" prefWidth="149.0" text="Create">
          <font>
             <Font name="Monotype Corsiva" size="20.0" />
          </font>
