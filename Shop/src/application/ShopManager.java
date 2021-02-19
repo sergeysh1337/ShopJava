@@ -9,7 +9,7 @@ public class ShopManager {
 		this.shop = new Shop(name);
 	}
 	
-	public Book[] initBooks(){
+	public void initBooks(){
 		Book book;
 		
 	    book = new Book();
@@ -138,12 +138,12 @@ public class ShopManager {
 	    book.setColor("2ec4b6");
 	    shop.addBook(book);
 	    
-	    return shop.getAllBooks();
+	    //return shop.getAllBooks();
 		
 	}
 
 	
-	public Customer[] initCustomerList() {
+	public void initCustomerList() {
 		Customer newCustomer;
 		newCustomer= new Customer("user", "pass", "haifa23", "052145236");
 		shop.addCustomer(newCustomer);
@@ -162,7 +162,7 @@ public class ShopManager {
 		
 		newCustomer= new Customer("user5", "pass5", "haifa23", "052145236");
 		shop.addCustomer(newCustomer);
-		return shop.getCustomers();
+		//return shop.getCustomers();
 	}
 	
 
