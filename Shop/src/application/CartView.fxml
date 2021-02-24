@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="780.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CartViewController">
+   <children>
+      <VBox alignment="CENTER" layoutY="10.0" prefHeight="770.0" prefWidth="528.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="185.0" text="My Cart" textAlignment="CENTER">
+               <font>
+                  <Font name="Monotype Corsiva" size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="isEmptyCart" alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="261.0" textAlignment="CENTER">
+               <font>
+                  <Font name="Monotype Corsiva" size="27.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="scrollPanel" prefHeight="562.0" prefWidth="528.0">
+               <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <GridPane fx:id="grid" prefHeight="35.0" prefWidth="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                        </GridPane>
+                        <GridPane fx:id="gridBar">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox fx:id="itemBar" prefHeight="100.0" prefWidth="0.0" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        
+                    </items>
+                     
+                  </ContextMenu>
+               </contextMenu>
+            </ScrollPane>
+            <VBox alignment="CENTER_LEFT" prefHeight="92.0" prefWidth="528.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Total Price: ">
+                           <font>
+                              <Font name="Monotype Corsiva" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalPrice" text="0">
+                           <font>
+                              <Font name="Monotype Corsiva" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label fx:id="afterDiscount" text="After discount: : ">
+                           <font>
+                              <Font name="Monotype Corsiva" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="discount" text="0">
+                           <font>
+                              <Font name="Monotype Corsiva" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="You saved: ">
+                           <font>
+                              <Font name="Monotype Corsiva" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="savedMoney" text="0">
+                           <font>
+                              <Font name="Monotype Corsiva" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="46.0" prefWidth="491.0">
+               <children>
+                  <Button fx:id="payBtn" mnemonicParsing="false" onAction="#buy" prefHeight="40.0" prefWidth="115.0" text="Buy">
+                     <font>
+                        <Font name="Monotype Corsiva" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="clearCart" mnemonicParsing="false" onAction="#clearCart" prefHeight="40.0" prefWidth="102.0" text="Clear Cart">
+                     <font>
+                        <Font name="Monotype Corsiva" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="continueToShop" mnemonicParsing="false" onAction="#backToShop" prefHeight="40.0" prefWidth="158.0" text="Continue to shop">
+                     <font>
+                        <Font name="Monotype Corsiva" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

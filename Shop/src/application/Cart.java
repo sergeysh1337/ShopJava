@@ -1,67 +1,112 @@
+
 package application;
 
 import java.util.Arrays;
 
 public class Cart {
+	private static int autoNumber=1000;
 	private int numberOfCart;
-	private Product[] products;
+	private Book[] books;
 	private int countOfProducts;
 	private Customer cartOwner;
+	public Cart()
+	{
+		numberOfCart=autoNumber++;
+		books=new Book[100];
+	}
+	public int getNumberOfCart()
+	{
+		return numberOfCart;
+	}
+	public int getCountOfProducts() {
+		return countOfProducts;
+	}
+
+	public void setCountOfProducts(int countOfProducts) {
+		this.countOfProducts = countOfProducts;
+	}
+
 	
-	public void addProduct(Product newProduct)
+	/*public Cart()
+	{
+		books = new Book[1000];
+		numberOfCart++;
+	}*/
+	
+	public Book[] getAllProduct() {
+		return this.books;
+	}
+	public void addProduct(Book newProduct)
 	{
 		if(countOfProducts<100)
 		{
-			products[countOfProducts]=newProduct;
+			books[countOfProducts]=newProduct;
 			countOfProducts++;
 		}
 	}
 	
-	public void deleteProduct(Product deleteProduct)
+	public void deleteProduct(Book deleteProduct)
 	{
-		Product[] anotherArray = new Product[countOfProducts - 1]; 
+		Book[] anotherArray = new Book[100]; 
 		for(int i=0,k=0;i<countOfProducts;i++)
 		{
-			if(products[i] == deleteProduct)
+			if(books[i] == deleteProduct)
 				continue;
 			
-				anotherArray[k++]=products[i];
+				anotherArray[k++]=books[i];
 		}
-		products=anotherArray;
+		books=anotherArray;
 		countOfProducts--;
 	}
 	public void deleteAll()
 	{
 		for(int i=0;i<countOfProducts;i++)
 		
-			products[i]=null;
+			books[i]=null;
+		countOfProducts=0;
 		
 	}
 	public void showCart()
 	{
-		System.out.println(Arrays.toString(products));
+		System.out.println(Arrays.toString(books));
 
 	}
 	public double totalPrice()
 	{
+		
 		double totalPrice = 0;
+		
 		for(int i=0;i<countOfProducts;i++)
 		{
-			totalPrice+=products[i].getPrice();
+			totalPrice+=books[i].getPrice();
 		}
-		return totalPrice;
+		
+		return Math.round(totalPrice);
+		
 	}
 	public double totalSale()
 	{
 		double totalSale = 0;
 		for(int i=0;i<countOfProducts;i++)
 		{
-			totalSale+=products[i].getPrice()*products[i].getSale()/100;
+			totalSale+=books[i].getPrice()*books[i].getSale()/100;
 		}
-		return totalSale;
+		return Math.round(totalSale);
 	}
 	public boolean getStatus()
 	{
 		return cartOwner!=null;
+	}
+	public Customer getOwner()
+	{
+		return cartOwner;
+	}
+	public void setOwner(Customer cartOwner)
+	{
+		this.cartOwner=cartOwner;
+	}
+	public int getCartNumber()
+	{
+		return numberOfCart;
 	}
 }

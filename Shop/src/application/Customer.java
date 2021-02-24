@@ -8,19 +8,37 @@ public class Customer {
 	private Cart personalCart;
 	private boolean online;
 	
+	
 	public Customer(String userName, String password, String address, String phoneNumber) {
 		this.userName = userName;
 		this.password = password;
 		this.address = address;
 		this.phoneNumber = phoneNumber;
+		
+		//this.personalCart=new Cart();
+		
+	}
+	public String toString()
+	{
+		String info="UserName:"+userName+"\n";
+		info+="Password:"+password+"\n";
+		info+="Address:"+address+"\n";
+		info+="phoneNumber:"+phoneNumber+"\n";
+		info+="Status:"+online+"\n";
+		if(online==true)
+		info+="Personal Cart:"+personalCart.getNumberOfCart()+"\n";
+		return info;
+
 	}
 	public void login()
 	{
 		online=true;
+		
 	}
 	public void logout()
 	{
 		online=false;
+		this.personalCart.setOwner(null);
 	}
 	public String getPhone()
 	{
@@ -33,9 +51,7 @@ public class Customer {
 	public void setPersonalCart(Cart personalCart) {
 		this.personalCart = personalCart;
 	}
-	public boolean isOnline() {
-		return online;
-	}
+
 	public void setOnline(boolean online) {
 		this.online = online;
 	}
@@ -66,12 +82,13 @@ public class Customer {
 	public void takeCart(Cart newCart)
 	{
 		personalCart=newCart;
+		this.personalCart.setOwner(this);
 	}
 	public void releaseCart()
 	{
-		personalCart=null;
+		personalCart.setOwner(null);
 	}
-	public void addProduct(Product newProduct)
+	public void addProduct(Book newProduct)
 	{
 		personalCart.addProduct(newProduct);
 	}
@@ -79,17 +96,17 @@ public class Customer {
 	{
 		
 	}
+	
 	public void showInvoice()
 	{
 		System.out.println(personalCart.totalPrice());
 	}
-	public void pay(double sum)
+	public void pay()
 	{
 		
 			personalCart.deleteAll();
-			personalCart=null;
-		
-		
+			personalCart.setOwner(null);
+
 	}
 	public boolean getStatus()
 	{
